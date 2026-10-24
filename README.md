@@ -33,7 +33,7 @@ the features it uses aren't ready yet
 use tynix::*;
 
 struct MyDevices;
-impl tynix::device::Devices for MyDevices {
+impl tynix::devices::Devices for MyDevices {
     fn get_count() -> usize { 1 }
     fn get_name(_id: usize) -> &'static [u8] { "output".as_bytes() }
     fn get_available_bytes(_id: usize) -> usize { 0 }
@@ -45,7 +45,7 @@ impl tynix::device::Devices for MyDevices {
 }
 
 struct MyBuiltins;
-impl tynix::builtin::Builtins for MyBuiltins {
+impl tynix::builtins::Builtins for MyBuiltins {
     fn get_count() -> usize { 1 }
     fn get_name(_id: usize) -> &'static [u8] { "init".as_bytes() }
     fn get_data(_id: usize) -> &'static [u8] { include_bytes!("demo_software.bin") }
